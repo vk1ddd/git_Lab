@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/git_lab.dir/main.c.o CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.o CMakeFiles/git_lab.dir/libs/data_structures/vector/vectorVoid.c.o -o git_lab 

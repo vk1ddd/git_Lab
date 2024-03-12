@@ -25,17 +25,18 @@ vectorVoid createVectorV(size_t n, size_t baseTypeSize) {
 
 void reserveV(vectorVoid *v, size_t newCapacity) {
     if (newCapacity == 0) {
+        free(v->data);
         v->data = NULL;
         v->size = 0;
     } else if (v->size > newCapacity) {
         v->size = newCapacity;
     } else if (v->capacity < newCapacity) {
-        v->data = realloc(v->data, v->baseTypeSize * newCapacity);
-    }
-
-    if (v->data == NULL) {
-        fprintf(stderr, "bad alloc");
-        exit(1);
+        void *newData = realloc(v->data, v->baseTypeSize * newCapacity);
+        if (newData == NULL) {
+            fprintf(stderr, "bad alloc");
+            exit(1);
+        }
+        v->data = newData;
     }
 
     v->capacity = newCapacity;
@@ -65,26 +66,35 @@ bool isFullV(vectorVoid *v) {
 }
 
 void getVectorValueV(vectorVoid *v, size_t index, void *destination) {
+    if (index >= v->size) {
+        fprintf(stderr, "index out of bounds");
+        exit(1);
+    }
     char *source = (char *) v->data + index * v->baseTypeSize;
     memcpy(destination, source, v->baseTypeSize);
 }
 
 void setVectorValueV(vectorVoid *v, size_t index, void *source) {
+    if (index >= v->size) {
+        fprintf(stderr, "index out of bounds");
+        exit(1);
+    }
     memcpy((char *)v->data + index * v->baseTypeSize, source, v->baseTypeSize);
 }
 
 void  popBackV(vectorVoid  *v){
     if (v->size == 0) {
-        fprintf(stderr, "Error");
+        fprintf(stderr, "Error: vector is empty");
         exit(1);
     }
-
     v->size--;
 }
 
 void  pushBackV(vectorVoid  *v,  void  *source){
+    if (v->size >= v->capacity) {
+        size_t newCapacity = (v->capacity == 0) ? 1 : v->capacity * 2;
+        reserveV(v, newCapacity);
+    }
     memcpy((char*)v->data + v->size * v->baseTypeSize, source, v->baseTypeSize);
     v->size++;
-    if(v->size > v->capacity)
-        v->capacity = v->size;
 }

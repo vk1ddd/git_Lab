@@ -61,6 +61,12 @@ build CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.obj: C_COMPILE
   OBJECT_DIR = CMakeFiles\git_lab.dir
   OBJECT_FILE_DIR = CMakeFiles\git_lab.dir\libs\data_structures\vector
 
+build CMakeFiles/git_lab.dir/libs/data_structures/vector/vectorVoid.c.obj: C_COMPILER__git_lab_unscanned_Debug C$:/Users/ivanu/CLionProjects/git_lab/libs/data_structures/vector/vectorVoid.c || cmake_object_order_depends_target_git_lab
+  DEP_FILE = CMakeFiles\git_lab.dir\libs\data_structures\vector\vectorVoid.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\git_lab.dir
+  OBJECT_FILE_DIR = CMakeFiles\git_lab.dir\libs\data_structures\vector
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target git_lab
@@ -69,7 +75,7 @@ build CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.obj: C_COMPILE
 #############################################
 # Link the executable git_lab.exe
 
-build git_lab.exe: C_EXECUTABLE_LINKER__git_lab_Debug CMakeFiles/git_lab.dir/main.c.obj CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.obj
+build git_lab.exe: C_EXECUTABLE_LINKER__git_lab_Debug CMakeFiles/git_lab.dir/main.c.obj CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.obj CMakeFiles/git_lab.dir/libs/data_structures/vector/vectorVoid.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\git_lab.dir

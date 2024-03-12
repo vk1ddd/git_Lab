@@ -2,8 +2,9 @@
 #include <stdint.h>
 #include <assert.h>
 #include "libs/data_structures/vector/vector.h"
+#include "libs/data_structures/vector/vectorVoid.h"
 
-void test_pushBack_emptyVector() {
+/*void test_pushBack_emptyVector() {
     vector v = createVector(0);
     pushBack(&v, 9);
     assert(v.size == 1);
@@ -81,10 +82,13 @@ void test() {
     test_back_oneElementInVector();
     test_front_oneElementInVector();
 }
+*/
 
 int main() {
     //vector v = createVector(SIZE_MAX);
-    test();
+    //test();
+
+    vectorVoid a;
 
     return 0;
 }

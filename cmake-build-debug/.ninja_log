@@ -1,0 +1,5 @@
+# ninja log v5
+2	92	7318900428265961	CMakeFiles/git_lab.dir/main.c.obj	8bd57cf15a1ee9db
+92	182	7318900429143377	git_lab.exe	e03b486b72b9c0b0
+1	859	7319601643325360	build.ninja	943115d374d94c69
+4	5697	7318900091619001	CMakeFiles/git_lab.dir/libs/data_structures/vector/vector.c.obj	b41281b0bbf337a0

@@ -27,21 +27,16 @@ void reserve(vector *v, size_t newCapacity) {
         v->data = NULL;
         v->size = 0;
     } else if (v->size > newCapacity) {
-        v->data = realloc(v->data, newCapacity);
         v->size = newCapacity;
-
-        if (v->data == NULL) {
-            fprintf(stderr, "bad alloc");
-            exit(1);
-        }
-    } else {
+    } else if (v->capacity < newCapacity){
         v->data = realloc(v->data, newCapacity);
-
-        if (v->data == NULL) {
-            fprintf(stderr, "bad alloc");
-            exit(1);
-        }
     }
+
+    if (v->data == NULL) {
+        fprintf(stderr, "bad alloc");
+        exit(1);
+    }
+
     v->capacity = newCapacity;
 }
 
@@ -76,7 +71,7 @@ void pushBack(vector *v, int x) {
         v->data[v->size] = x;
         v->size++;
     } else {
-        size_t size = v->size == (0 || NULL) ? 1 : 2 * v->size;
+        size_t size = v->size == 0 ? 1 : 2 * v->size;
         reserve(v, size);
         v->data[v->size] = x;
         v->size++;
@@ -115,5 +110,3 @@ int *front(vector *v) {
     }
     return &(v->data[0]);
 }
-
-

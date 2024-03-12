@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
+
 #ifndef GIT_LAB_VECTOR_H
 #define GIT_LAB_VECTOR_H
 
@@ -18,15 +20,31 @@ typedef struct vector {
 vector createVector(size_t n);
 
 //перевыделяет память для вектора (изменяет капасити)
-void  reserve(vector  *v,  size_t  newCapacity);
+void reserve(vector *v, size_t newCapacity);
 
 //удаляет элементы из контейнера, но не освобождает выделенную память
-struct vector clear(vector  *v);
+struct vector clear(vector *v);
 
 //освобождает  память,  выделенную  под неиспользуемые элементы
-void  shrinkToFit(vector  *v);
+void shrinkToFit(vector *v);
 
 //освобождает память, выделенную вектору
-void  deleteVector(vector  *v);
+void deleteVector(vector *v);
+
+//проверка пустой ли вектор
+bool isEmpty(vector *v);
+
+//проверка полный ли вектор
+bool isFull(vector *v);
+
+//возвращает i-ый элемент вектора v
+int getVectorValue(vector *v, size_t i);
+
+// добавляет элемент x в конец вектора v
+void pushBack(vector *v, int x);
+
+
+// удаляет последний элемент из вектора
+void popBack(vector *v);
 
 #endif //GIT_LAB_VECTOR_H

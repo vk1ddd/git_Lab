@@ -28,8 +28,8 @@ void reserve(vector *v, size_t newCapacity) {
         v->size = 0;
     } else if (v->size > newCapacity) {
         v->size = newCapacity;
-    } else if (v->capacity < newCapacity){
-        v->data = realloc(v->data, newCapacity);
+    } else if (v->capacity < newCapacity) {
+        v->data = realloc(v->data, sizeof(int) * newCapacity);
     }
 
     if (v->data == NULL) {
@@ -40,8 +40,8 @@ void reserve(vector *v, size_t newCapacity) {
     v->capacity = newCapacity;
 }
 
-vector clear(vector *v) {
-    return (vector) {v->data, 0, v->capacity};
+void clear(vector *v) {
+    v->size = 0;
 }
 
 void shrinkToFit(vector *v) {

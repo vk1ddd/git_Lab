@@ -23,7 +23,7 @@ vector createVector(size_t n);
 void reserve(vector *v, size_t newCapacity);
 
 //удаляет элементы из контейнера, но не освобождает выделенную память
-struct vector clear(vector *v);
+void clear(vector *v);
 
 //освобождает  память,  выделенную  под неиспользуемые элементы
 void shrinkToFit(vector *v);
@@ -42,7 +42,6 @@ int getVectorValue(vector *v, size_t i);
 
 // добавляет элемент x в конец вектора v
 void pushBack(vector *v, int x);
-
 
 // удаляет последний элемент из вектора
 void popBack(vector *v);

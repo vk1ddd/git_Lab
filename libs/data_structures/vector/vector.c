@@ -84,7 +84,7 @@ void popBack(vector *v) {
         exit(1);
     }
 
-    v->size = v->size - 1;
+    v->size--;
 }
 
 int *atVector(vector *v, size_t index) {

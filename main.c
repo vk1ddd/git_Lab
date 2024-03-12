@@ -4,7 +4,7 @@
 #include "libs/data_structures/vector/vector.h"
 #include "libs/data_structures/vector/vectorVoid.h"
 
-/*void test_pushBack_emptyVector() {
+void test_pushBack_emptyVector() {
     vector v = createVector(0);
     pushBack(&v, 9);
     assert(v.size == 1);
@@ -82,13 +82,49 @@ void test() {
     test_back_oneElementInVector();
     test_front_oneElementInVector();
 }
-*/
+
 
 int main() {
     //vector v = createVector(SIZE_MAX);
-    //test();
+    test();
 
-    vectorVoid a;
+    /*size_t n;
+    scanf("%zd", &n);
+    vectorVoid v = createVectorV(0, sizeof(int));
+    for (int i = 0; i < n; i++) {
+        int x;
+        scanf("%d", &x);
+        pushBackV(&v, &x);
+    }
+
+    for (int i = 0; i < 3; i++) {
+        int *value = (int *) (((char *) v.data) + i * v.baseTypeSize);
+        printf("%d", *value);
+    }
+
+    for (int i = 0; i < n; i++) {
+        int x;
+        getVectorValueV(&v, i, &x);
+        printf("%d  ", x);
+    }
+
+
+    size_t n;
+    scanf("%zd", &n);
+    vectorVoid v = createVectorV(0, sizeof(float));
+
+    for (int i = 0; i < n; i++) {
+        float x;
+        scanf("%f", &x);
+        pushBackV(&v, &x);
+    }
+
+    for (int i = 0; i < n; i++) {
+        float x;
+        getVectorValueV(&v, i, &x);
+        printf("%f  ", x);
+    }*/
+
 
     return 0;
 }

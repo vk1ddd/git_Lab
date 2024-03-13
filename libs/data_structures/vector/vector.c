@@ -24,6 +24,7 @@ vector createVector(size_t n) {
 
 void reserve(vector *v, size_t newCapacity) {
     if (newCapacity == 0) {
+        free(v->data);
         v->data = NULL;
         v->size = 0;
     } else if (v->size > newCapacity) {

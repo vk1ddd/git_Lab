@@ -6,5 +6,5 @@ set(CMAKE_C_STANDARD 11)
 add_executable(git_lab main.c
         libs/data_structures/vector/vector.h
         libs/data_structures/vector/vector.c
-        libs/data_structures/vector/vectorVoid.h
-        libs/data_structures/vector/vectorVoid.c)
+        libs/data_structures/vectorVoid/vectorVoid.h
+        libs/data_structures/vectorVoid/vectorVoid.c)
